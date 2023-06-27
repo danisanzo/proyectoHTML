@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de jQuery</title>
+  <meta charset="UTF-8">
+	<style>
+		.resaltado,.resaltado2{
+  			color:#000000;
+		}
+
+	</style>
+</head>
+
+<body>
+  <p>Cuales de los siguientes lenguajes son orientados a objetos:
+    <span class="resaltado">Java</span>, VB6, <span class="resaltado">C++</span>, C,
+    <span class="resaltado">C#</span>, Cobol ?</p>
+  <input type="button" id="boton1" value="ver resultado">
+  <br>
+    <p>Cuales de las siguientes provincias tienen salida al mar:
+    <span class="resaltado2">Asturias</span>, Toledo, <span class="resaltado2">Murcia</span>, LÃ©rida,
+    <span class="resaltado2">Almeria</span>, Sevilla ?</p>
+  <input type="button" id="boton2" value="ver resultado">
+
+
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+  <script>
+		let x = $(document);
+		x.ready(inicializarEventos);
+		x.ready(inicializarEventos2);
+		
+		function inicializarEventos() {
+		  let x = $("#boton1");
+		  x.click(resaltar);
+		}
+		function resaltar() {
+		  let x = $(".resaltado");
+		  x.css("background-color", "#ffff00");
+		}
+
+		function inicializarEventos2() {
+		  $("#boton2").click(function(event){
+		 	 $(".resaltado2").css("background-color", "#ffff00");
+			});
+		}
+		
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" />
+		<title>jQuery 3.6.0</title>
+		<style type="text/css">
+			 h1{ font-weight:normal; }
+			.boton { background-color:skyblue; color:white; border-radius:1em; padding:1em; display:inline-block;}
+			.texto-rojo { color:red; }
+			.pon-negrita { font-weight:bolder; }
+			.pon-fverde { background-color: lime; }
+			.texto-negro{color:black}
+		</style>
+	</head>
+	<body>
+		<h1>Practicando con jQuery</h1>
+		<p>
+			<div class="boton texto-rojo">Texto rojo</div>
+			<div class="boton texto-negro">Texto negro</div>
+			<div class="boton pon-negrita">Añadir negrita</div>
+			<div class="boton quita-negrita">Quitar negrita</div>
+			<div class="boton pon-fverde">Añadir fondo verde</div>
+			<div class="boton quita-fverde">Quitar fondo verde</div>
+		</p>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready( function() {
+				$("div.texto-rojo").mouseenter(function(){
+					$("h1").addClass('texto-rojo');
+				});
+				$("div.texto-negro").mouseenter(function(){
+					$("h1").removeClass('texto-rojo');
+				});
+				$("div.pon-negrita").mouseenter(function(){
+					$("h1").addClass('pon-negrita');
+				});
+				$("div.quita-negrita").mouseenter(function(){
+					$("h1").removeClass('pon-negrita');
+				});
+				$("div.pon-fverde").mouseenter(function(){
+					$("h1").addClass('pon-fverde');
+				});
+				$("div.quita-fverde").mouseenter(function(){
+					$("h1").removeClass('pon-fverde');
+				});
+				/* Solución 2, utilizando this
+				
+					$("div").mouseenter(function(){
+
+					if ($(this).hasClass("texto-rojo"))
+					{
+						$("h1").removeClass('texto-negro');
+						$("h1").addClass('texto-rojo');
+					}
+					if ($(this).hasClass("pon-fverde"))
+					{
+						$("h1").addClass('pon-fverde');
+					}
+					if ($(this).hasClass("texto-negro"))
+					{
+						$("h1").removeClass('texto-rojo');
+						$("h1").addClass('texto-negro');
+					}
+					
+				});*/
+			});
+			</script>
+	</body>
+</html>
